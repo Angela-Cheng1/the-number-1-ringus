@@ -1,0 +1,165 @@
+<html>
+    <head>
+        <link rel="icon" type="image/x-icon" href="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+<body>
+    <div class="overlay-container">
+      <img src="images/afternoon.png" class="edge-image">
+      <h1 class="afternoon-title">The Afternoon</h1>
+    </div>
+
+    <div class="song-list">
+        <button class="song-button" onclick="playSong('song4')">
+            <img src="images/peak.png" alt="Peak">
+        </button>
+        <audio id="song4" src="audio/song4.mp3" preload="auto"></audio>
+
+        <button class="song-button" onclick="playSong('song5')">
+            <img src="images/creek.png" alt="Creek">
+        </button>
+        <audio id="song5" src="audio/song5.mp3" preload="auto"></audio>
+
+        <button class="song-button" onclick="playSong('song6')">
+            <img src="images/wide.png" alt="Wide">
+        </button>
+        <audio id="song6" src="audio/song6.mp3" preload="auto"></audio>
+
+        <button class="song-button" onclick="playSong('song7')">
+            <img src="images/deep.png" alt="Deep">
+        </button>
+        <audio id="song7" src="audio/song7.mp3" preload="auto"></audio>
+
+        <button class="song-button" onclick="playSong('song8')">
+            <img src="images/leave.png" alt="Leaves">
+        </button>
+        <audio id="song8" src="audio/song8.mp3" preload="auto"></audio>
+
+        <button class="song-button" onclick="playSong('song9')">
+            <img src="images/heave.png" alt="Heave">
+        </button>
+        <audio id="song9" src="audio/song9.mp3" preload="auto"></audio>
+
+        <button class="song-button" onclick="playSong('song10')">
+            <img src="images/gusts.png" alt="Gusts">
+        </button>
+        <audio id="song10" src="audio/song10.mp3" preload="auto"></audio>
+
+        <button class="song-button" onclick="playSong('song11')">
+            <img src="images/dusk.png" alt="Dusk">
+        </button>
+        <audio id="song11" src="audio/song11.mp3" preload="auto"></audio>
+    </div>
+
+    <script>
+        let currentAudio = null;
+
+        function playSong(songId) {
+            const selectedSong = document.getElementById(songId);
+
+            if (!selectedSong) {
+                console.error("Could not find an audio element with ID:", songId);
+                return;
+            }
+
+            if (currentAudio && currentAudio !== selectedSong) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+            }
+
+            if (selectedSong.paused) {
+                selectedSong.play()
+                    .then(() => {
+                        currentAudio = selectedSong;
+                    })
+                    .catch((error) => {
+                        console.error("Playback failed. Add the mp3 file for this song ID or run the page from a local server.", error);
+                    });
+            } else {
+                selectedSong.pause();
+                currentAudio = null;
+            }
+        }
+    </script>
+<button onclick="window.location.href='evening.html';" class="next">erm-></button>
+    <style>
+        .next{
+                text-decoration: none;
+                border: none;
+                color: red;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                font-size: x-large;
+                font-weight: 400;
+                width: 100%;
+            }
+            .next:hover{
+                color: greenyellow;
+                background-color: bisque;
+            }
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        .overlay-container {
+            position: relative;
+            text-align: center;
+        }
+
+        .afternoon-title {
+            color: red;
+            font-size: 80px;
+            font-weight: 600;
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            margin-left: 10%;
+        }
+
+        .edge-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            position: relative;
+            z-index: -1;
+        }
+
+        .song-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            padding: 18px;
+            background: #f4f0d8;
+        }
+
+        .song-button {
+            width: 100%;
+            padding: 0;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            display: block;
+        }
+
+        .song-button img {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 14px;
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+        .song-button:hover img {
+            filter: brightness(1.08);
+            transform: scale(1.01);
+        }
+    </style>
+</body>
+</html>

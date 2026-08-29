@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css"/>
+        <link rel="icon" type="image/x-icon" href="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+    <nav class="nav-links">
+        <div class="morning-tab"> <!-- temp stuff for now -->
+        <button onclick="window.location.href='morning.html';" class="morning-button">Morning</button>
+        <button onclick="window.location.href='afternoon.html';" class="morning-button">Afternoon</button>
+       <button onclick="window.location.href='evening.html';" class="morning-button">Evening</button>
+        <style>
+            .header {
+                background-color:greenyellow;
+                position: sticky;
+                top: 0;
+                left: 0;
+                z-index: 1000;                  /* Keeps header above all other content */
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 15px 30px;
+            }
+            .morning-button {
+                background-color:transparent; /* Green */
+                border: none;
+                color: white;
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+            }
+            .morning-button:hover {
+                background-color: #84eb44;
+                color: white;
+                border: 5px;
+                border-radius: 2px;
+            }
+        </style>
+      
+    </div>
+    </nav>
+       
+    </header>
+<div class="overlay-container">
+    <img src="images/Gay_Pride_Flag.svg.png" alt="yo reflection fr" class="edge-image">
+    <h1 class="overlay-text">Angela's perfect day...</h1>
+
+
+</div>
+
+<img src="images/pixil-gif-drawing.gif" alt="me flying" class="flying">
+<style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
+        }
+        .overlay-container {
+             position: relative;
+  text-align: center;
+        }
+ 
+        /* Step 2: Make the image stretch edge-to-edge */
+        .edge-image {  
+            width: 100%;
+            height: auto;       /* Maintains aspect ratio */
+            display:block;
+            position:relative; 
+              z-index: -1;/* Removes extra whitespace at the bottom */
+        }
+        .overlay-text {
+            font-size: 40px;
+            text-align: center;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            color:white;
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+       }
+      .flying {
+        width: 100%
+      }
+           </style>
+</body>
+</html>

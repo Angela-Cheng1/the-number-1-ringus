@@ -1,0 +1,321 @@
+<html>
+    <head>
+        <link rel="icon" type="image/x-icon" href="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+<body>
+    
+    <div class="overlay-container">
+      <img src="images/grass.png" class="edge-image">
+        <h1 class="morning1">The Morning</h1>
+    </div>
+        <div class="yellowmaster">
+            <button onclick="playSong('song1')" class="peergynt">The sun still shines,</button>
+            <audio id="song1" src="audio/song1.mp3" preload="auto"></audio>
+        </div>
+
+        <div class="orangemaster">
+            <a id="playBtn2" href="https://www.youtube.com/watch?v=L0MK7qz13bU" class="glows">The grass still glows</a>
+        </div>
+
+        <div style="background-color: blanchedalmond;">
+            <a id="playBtn3" href="https://static.wikia.nocookie.net/minecraft-mob/images/a/a9/DA_BREEZE.webp/revision/latest?cb=20240222151336" class="breese">The winds breeze by,</a>
+        </div>
+
+        <div style="background-color: burlywood;">
+            <a id="playBtn4" href="https://www.youtube.com/watch?v=lWA2pjMjpBs" class="brightblue">Through the bright blue sky.</a>
+        </div>
+
+        <div style="background-color: chartreuse;">
+            <a id="playBtn5" href="https://th-thumbnailer.cdn-si-edu.com/wIiR3IGOQCK-5evCd6l0H1M-STY=/1000x750/filters:no_upscale():focal(805x775:806x776)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/e6/1e/e61e3382-565f-41fc-a02c-69a0e2045144/2023_over_18_specially_commended_portraits_look-into-my-eyes_damselfly__pete_burford.jpg" class="burlybugs">Heralded by the burly bugs,</a>
+        </div>
+
+        <div style="background-color: cornflowerblue;">
+            <a id="playBtn6" href="https://www.youtube.com/watch?v=F2S8lXBlDHw" class="wrigglyworms">Crowned by wriggly worms,</a>
+        </div>
+
+        <div style="background-color: darkolivegreen;">
+            <a id="playBtn7" href="https://www.youtube.com/watch?v=ta72-fQKXvw" class="loamy">The soil loamy and tough,</a>
+        </div>
+
+        <div style="background-color: royalblue;">
+            <a id="playBtn8" href="https://preview.redd.it/and-here-comes-movie-rocky-v0-e16drhzsw02g1.jpeg?auto=webp&s=37669b66f66123b75b27b7bb1ecfa041c7f1e508" class="rocky">Brown, rocky and rough.</a>
+        </div>
+
+        <div style="background-color:rosybrown;">
+            <a id="playBtn9" href="https://5.imimg.com/data5/YS/DL/BU/SELLER-52971039/brinjal-begun-5-kg.jpg" class="begun">The day has just begun,</a>
+        </div>
+
+        <div style="background-color:forestgreen;">
+             <button onclick="playSong('song3')" class="fun">Birds chirping and having fun,</button>
+            <audio id="song3" src="audio/song3.mp3" preload="auto"></audio>
+        </div>
+
+        <div style="background-color:lawngreen;">
+            <a id="playBtn11" href="https://www.youtube.com/watch?v=a1B2oO6D1ps" class="remains">The crisp of dew remains,</a>
+        </div>
+
+        <div style="background-color:deepskyblue;">
+            <a id="playBtn12" href="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSONFa4vSbgUwxhYdjMTV120TM7Kn74KMEUHlEmafp2z_K9bV9Y" class="plains">In the dense leafy plains,</a>
+        </div>
+
+        <div>
+            <button class="peergynt" onclick="playSong('song2')">The sun rises</button>
+            <audio id="song2" src="audio/song2.mp3" preload="auto"></audio>
+        </div>
+
+        <script>
+            let currentAudio = null;
+
+            function playSong(songId) {
+                const selectedSong = document.getElementById(songId);
+
+                if (!selectedSong) {
+                    console.error("Could not find an audio element with ID:", songId);
+                    return;
+                }
+
+                if (currentAudio && currentAudio !== selectedSong) {
+                    currentAudio.pause();
+                    currentAudio.currentTime = 0;
+                }
+
+                if (selectedSong.paused) {
+                    selectedSong.play()
+                        .then(() => {
+                            currentAudio = selectedSong;
+                        })
+                        .catch((error) => {
+                            console.error("Playback failed. Try opening the page over a local web server.", error);
+                        });
+                } else {
+                    selectedSong.pause();
+                    currentAudio = null;
+                }
+            }
+        </script>
+
+        <button onclick="window.location.href='afternoon.html';" class="next">nomnomnom-></button>
+
+        <style>
+            .next{
+                text-decoration: none;
+                border: none;
+                color: red;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                font-size: x-large;
+                font-weight: 400;
+                width: 100%;
+            }
+            .next:hover{
+                color: greenyellow;
+                background-color: bisque;
+            }
+            .plains{
+                 border: transparent;
+                font-size: 60px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color:khaki;
+                background-color: transparent;
+                width: 100%;
+                text-decoration: none;
+                align-items: center;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            }
+            .plains:hover{
+                background-color:wheat;
+                color:hotpink;
+            }
+            .remains{
+                 border: transparent;
+                font-size: 60px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color:tomato;
+                background-color: transparent;
+                width: 100%;
+                text-decoration: none;
+                align-items: center;
+                font-family: cursive;
+            }
+            .remains:hover{
+                background-color:thistle;
+                color:darkcyan;
+            }
+            .fun{
+                 border: transparent;
+                font-size: 60px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color:firebrick;
+                background-color: transparent;
+                width: 100%;
+                text-decoration: none;
+                align-items: center;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            }
+            .fun:hover{
+                background-color:indigo;
+                color:sandybrown;
+            }
+            .begun{
+                 border: transparent;
+                font-size: 60px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color:seagreen;
+                background-color: transparent;
+                width: 100%;
+                text-decoration: none;
+                align-items: center;
+            }
+            .begun:hover{
+                background-color:darkmagenta;
+                color: darkgrey;
+            }
+            .rocky{
+                 border: transparent;
+                font-size: 60px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color:darksalmon;
+                background-color: transparent;
+                width: 100%;
+                text-decoration: none;
+                align-items: center;
+            }
+            .rocky:hover{
+                background-color:olivedrab;
+                color:fuchsia;
+            }
+            .loamy{
+                 border: transparent;
+                font-size: 60px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color:darkslategrey;
+                background-color: transparent;
+                width: 100%;
+                text-decoration: none;
+                align-items: center;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+            .loamy:hover{
+                background-color:limegreen;
+                color:lightseagreen;
+            }
+            .wrigglyworms{
+                 border: transparent;
+                font-size: 60px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color:darkorchid;
+                background-color: transparent;
+                width: 100%;
+                text-decoration: none;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            }
+            .wrigglyworms:hover{
+                background-color:cyan;
+                color:goldenrod;
+            }
+            .burlybugs{
+                border: transparent;
+                font-size: 60px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: orange;
+                background-color: transparent;
+                width: 100%;
+                text-decoration: none;
+                font-family: 'Times New Roman', Times, serif;
+            }
+            .burlybugs:hover{
+                background-color:dodgerblue;
+                color:indianred;
+            }
+            .brightblue{
+                border: transparent;
+                font-size: 60px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: white;
+                background-color: transparent;
+                width: 100%;
+                text-decoration: none;
+            }
+            .brightblue:hover{
+                background-color: yellow;
+                color: red;
+            }
+            .breese{
+                border: transparent;
+                font-size: 60px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: pink;
+                background-color: transparent;
+                text-decoration: none;
+                width: 100%;
+            }
+            .breese:hover{
+                background-color:lightcoral;
+                color:mistyrose;
+            }
+            .glows {
+                border: transparent;
+                font-size: 60px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: orange;
+                background-color: transparent;
+                width: 100%;
+                text-decoration: none;
+                font-family: fantasy;
+            }
+            .glows:hover{
+                background-color: yellow;
+                color: red;
+            }
+            .orangemaster {
+                background-color: purple;
+            }
+            .yellowmaster {
+                background-color: #5bbfde;
+            }
+            .peergynt {
+                border: transparent;
+                font-size: 60px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: greenyellow;
+                background-color: transparent;
+                width: 100%;
+            }
+            .peergynt:hover{
+                color: green;
+                background-color: beige;
+            }
+        .morning1 {
+            color: white;
+            font-size: 80px;
+            font-weight: 600;
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            margin-left: 10%;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
+        }
+        .overlay-container {
+             position: relative;
+             text-align: center;
+        }
+ 
+        /* Step 2: Make the image stretch edge-to-edge */
+        .edge-image {  
+            width: 100%;
+            height: auto;       /* Maintains aspect ratio */
+            display:block;
+            position:relative; 
+              z-index: -1;/* Removes extra whitespace at the bottom */
+        }
+        </style>
+    </body>
+    </html>

@@ -1,0 +1,8 @@
+morning-button {
+background-color: transparent; /* Primary blue background */
+  color: #ffffff;            /* White text */
+  padding: 12px 24px;        /* 12px top/bottom, 24px left/right */
+  border: none;              /* Removes default gray border */
+  border-radius: 6px;        /* Softens the sharp corners */
+  
+}
